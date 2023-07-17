@@ -10,7 +10,7 @@ insert into car values(4,'lambo',5,'lhy')
 insert into car values(5,'scorpio',6,'diesel')
 insert into car values(4,'civic',8,'diesel')
 
-select * from car
+
 
 
 select * from car where mileage>=10    /*using operator*/
@@ -44,3 +44,13 @@ alter table car add powertype varchar(20)/*add new column*/
 select * from car where mileage > 7 and mileage <10   /*give range using and*/
 
 select * from car where mileage < 6 or mileage <8   /*give range using or*/
+
+select count(model) as 'lambo' from car  /*count the data*/
+
+select max(mileage) as varchar from car  /*maximum value*/
+
+select min(mileage) as varchar from car  /*minimum value*/
+
+select sum(mileage) as varchar from car  /*give range using and*/
+
+select avg(mileage) as varchar from car  /*give range using and*/
