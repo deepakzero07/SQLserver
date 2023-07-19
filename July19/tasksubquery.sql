@@ -30,9 +30,32 @@ update task2 set joiningdate = '2021/1/28' where department ='legal';
 
 /*#2*/
 
-select * from task2 where joiningdate > '01-01-2021'
+select * from task2 where joiningdate > '01-01-2022'
+
+create table emp (id int, firstname varchar(25), lastname varchar(25), mobno bigint , emailid varchar(25), department varchar(25), designation varchar(25), salary money) 
+
+
+
+
+insert into emp(id,firstname,lastname,mobno,emailid,department,designation,salary,joiningdate)(select id,firstname,lastname,mobno,emailid,department,designation,salary,joiningdate from task2 where joiningdate > '01-01-2021')
+
+alter table emp add joiningdate date
+
+
+/*#2*/
+select * from emp
+
+
+delete 
+
+
+
+
 
 select datediff(year,joiningdate,cast(getdate() as date)) as date from task2
+
+
+
 
 /*calculate experience*/
 
