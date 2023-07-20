@@ -1,11 +1,11 @@
 use dbname
 
-/*create a table*/
+/create a table/
 
 create table employee(id int, firstname varchar(25), lastname varchar(25), mobno bigint , emailid varchar(25), department varchar(25), designation varchar(25), salary int)
 alter table employee alter column mobno bigint
 
-/*insert 8  values*/
+/insert 8  values/
 ALTER TABLE employee ADD takehome int;
 
 insert into employee values(001,'s','deepak',3500190463,'depak@gmail.com','finance','data analyst', 550000)
@@ -20,11 +20,11 @@ insert into employee values(008,'v','karan',2500190463,'kn@gmail.com','marketing
 
 select * from employee
 
-/*alter  table by adding dob and joining date*/
+/alter  table by adding dob and joining date/
 
 alter table employee add dob date, dateofjoining date
 
-/*update values*/
+/update values/
 
 update employee set dateofjoining = '2022/12/1' where department ='marketing';
 
@@ -57,28 +57,28 @@ update employee set dob = '2002/09/13 ' where id = 9;
 update employee set dob = '2001/11/23 ' where id = 10;
 
 
-/*show vales of emp > 1 exp*/
+/show vales of emp > 1 exp/
 
 select * from employee where salary >= 600000 and datediff(year,dateofjoining,cast(getdate() as date)) >= 1
 
-/*show exp*/
+/show exp/
 
 select datediff(year,dateofjoining,cast(getdate() as date)) as date from employee
 
-/*expenditure*/
+/expenditure/
 
 select sum(salary) from employee where department = 'marketing'
 
 
-/*delete the highest salary*/
+/delete the highest salary/
 
 DELETE FROM employee WHERE salary = (select max(salary) from employee )
 
-/*calculate takehome ctc by salary*/
+/calculate takehome ctc by salary/
 
 UPDATE employee SET takehome = salary - (salary * 0.2)
 
-/*sort by vsalary from least to high*/
+/sort by vsalary from least to high/
 
 
-SELECT id, firstname, lastname, department, designation, salary, takehome FROM employee ORDER BY takehome 
+SELECT id, firstname, lastname, department, designation, salary, takehome FROM employee ORDER BY takehome
